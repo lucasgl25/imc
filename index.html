@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="https://play-lh.googleusercontent.com/ylOue_jHJ8-O8AmKWahUl8i_GKjZtT-IO_e8WI4hrf68693HMNfohxZHg7UZ0g6ioQ">
+    <link rel="stylesheet" href="imc.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.M.C</title>
+</head>
+<body>
+
+    <h1>I.M.C</h1>
+
+    <label for="peso"> Peso  KG</label>
+ 
+
+    <center><input type="number" id="peso" name="peso"></center>
+    <br>
+
+    <label for="altura">Altura CM</label>
+   
+
+    <center><input type="number" id="altura" name="altura"></center>
+    <br>
+
+    <button onclick="calcularImc()">Calcular</button>
+    <br>
+
+    <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+
+    
+    <script>
+
+        function calcularImc(){
+            const peso = window.document.getElementById("peso").value;
+            const altura = window.document.getElementById("altura").value;
+            const imc = peso / (altura**2)
+            document.getElementById("resultado").textContent = imc.toFixed(2)
+        }
+
+        let tituloDinamico = document.title;
+        window.addEventListener("blur", ()=>{
+            document.title = "volte. SENÃO................. "
+        })
+
+        window.addEventListener("focus", ()=>{
+            document.title = "Voltou por medo"
+        })
+
+
+    </script>
+
+    <br>
+<footer>
+    <p>site criado por Lucas R. Kuhn</p>
+</footer>
+
+
+
+
+
+    
+</body>
+</html>
